@@ -41,39 +41,8 @@
       font-size: 16px;
       line-height: 1.7;
       overflow-x: hidden;
-      cursor: none;
     }
 
-    /* ── CUSTOM CURSOR ── */
-    #cursor {
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform .1s, background .2s;
-      mix-blend-mode: difference;
-    }
-
-    #cursor-ring {
-      width: 36px;
-      height: 36px;
-      border: 1.5px solid var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform .18s ease, width .2s, height .2s;
-      opacity: .5;
-    }
 
     /* ── SCANLINE OVERLAY REMOVED ── */
 
@@ -98,6 +67,7 @@
       font-size: .85rem;
       color: var(--accent);
       letter-spacing: .08em;
+      margin-right: 4rem;
     }
 
     .nav-logo span {
@@ -249,7 +219,7 @@
       display: inline-flex;
       align-items: center;
       gap: .5rem;
-      cursor: none;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -726,8 +696,51 @@
       box-shadow: 0 8px 30px rgba(0, 229, 255, .12);
     }
 
+    /* Branded Hover Colors */
+    .contact-item:nth-child(3):hover {
+      color: #0077b5;
+      border-color: #0077b5;
+    }
+
+    /* LinkedIn */
+    .contact-item:nth-child(4):hover {
+      color: #e4405f;
+      border-color: #e4405f;
+    }
+
+    /* Instagram */
+    .contact-item:nth-child(5):hover {
+      color: #1877f2;
+      border-color: #1877f2;
+    }
+
+    /* Facebook */
+    .contact-item:nth-child(1):hover {
+      color: #4caf50;
+      border-color: #4caf50;
+    }
+
+    /* Phone */
+    .contact-item:nth-child(2):hover {
+      color: #ff9800;
+      border-color: #ff9800;
+    }
+
+    /* Mail */
+
     .contact-icon {
-      font-size: 1.1rem;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .contact-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
     }
 
     /* ── FOOTER ── */
@@ -889,9 +902,6 @@
 
 <body>
 
-  <!-- Custom cursor -->
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
 
   <!-- Background Canvas -->
   <canvas id="bg-canvas"></canvas>
@@ -1095,13 +1105,44 @@
       always open.</p>
     <div class="contact-links">
       <a href="tel:8420518456" class="contact-item">
-        <span class="contact-icon">📞</span> 8420518456
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+          </svg>
+        </span> 8420518456
       </a>
       <a href="mailto:Snehasisnaskar8456@gmail.com" class="contact-item">
-        <span class="contact-icon">✉️</span> Snehasisnaskar8456@gmail.com
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M17,17H7V15H17M17,13H7V11H17M20,9H4V6H20" />
+          </svg>
+        </span> Snehasisnaskar8456@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/snehasis-naskar-945448301/" target="_blank" class="contact-item">
-        <span class="contact-icon">🔗</span> LinkedIn Profile
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C13.93,9.94 13,10.63 12.6,11.24V10.13H10.13V18.5H12.61V14.33A1.62,1.62 0 0,1 14.23,12.71C15.11,12.71 15.67,13.26 15.67,14.47V18.5H18.5M7.33,18.5V10.13H9.81V18.5H7.33M7.33,8.96A1.24,1.24 0 1,1 8.57,7.72A1.24,1.24 0 0,1 7.33,8.96Z" />
+          </svg>
+        </span> LinkedIn
+      </a>
+      <a href="https://www.instagram.com/theobysnehasis?igsh=OGsxNzd0MXVta3pm" target="_blank" class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M18,4.48A1.59,1.59 0 0,1 16.41,6.07A1.59,1.59 0 0,1 14.82,4.48A1.59,1.59 0 0,1 16.41,2.89A1.59,1.59 0 0,1 18,4.48Z" />
+          </svg>
+        </span> Instagram
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61574860652946" target="_blank" class="contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+          </svg>
+        </span> Facebook
       </a>
     </div>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_lkWkjwYDTWNq-R2OIMHLxlBp-eMsYTxAWvpbk_37scB9UQ/viewform?usp=header"
@@ -1115,31 +1156,6 @@
   </footer>
 
   <script>
-    // ── CURSOR ──
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animateCursor() {
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-      rx += (mx - rx) * .15;
-      ry += (my - ry) * .15;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-    document.querySelectorAll('a, button, .btn').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
-        ring.style.width = '56px'; ring.style.height = '56px';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-        ring.style.width = '36px'; ring.style.height = '36px';
-      });
-    });
 
     // ── TYPED EFFECT ──
     const phrases = [
@@ -1181,6 +1197,10 @@
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // Force high-quality interpolation
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
     }
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
@@ -1206,53 +1226,50 @@
     let currentFrame = 0;
     let lastTime = 0;
     let scrollY = 0;
-    let smoothMouse = 0;
+    let mx = 0, my = 0, smoothMouse = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
     window.addEventListener('scroll', () => { scrollY = window.pageYOffset; });
 
     function animateBG(timestamp) {
       requestAnimationFrame(animateBG);
 
-      const elapsed = timestamp - lastTime;
-      if (elapsed < 16) return;
-      lastTime = timestamp;
-
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       const scrollRatio = Math.max(0, Math.min(1, scrollY / maxScroll));
       const targetFrame = scrollRatio * (frameCount - 1);
 
-      // Smoothly interpolate (one transition instead of two)
-      currentFrame += (targetFrame - currentFrame) * 0.04;
+      // Increase responsiveness for 60fps smoothness (from 0.04 to 0.08)
+      currentFrame += (targetFrame - currentFrame) * 0.08;
 
-      smoothMouse += (mx - smoothMouse) * 0.05;
+      smoothMouse += (mx - smoothMouse) * 0.08;
       const mouseOffset = (smoothMouse / window.innerWidth - 0.5) * 12;
 
       const frameToDraw = Math.floor(Math.max(0, Math.min(frameCount - 1, currentFrame + mouseOffset)));
 
       const img = images[frameToDraw];
       if (img && img.complete && img.naturalWidth > 0) {
-        const canvasAspect = canvas.width / canvas.height;
+        const canvasWidth = window.innerWidth;
+        const canvasHeight = window.innerHeight;
+        const canvasAspect = canvasWidth / canvasHeight;
         const imgAspect = img.width / img.height;
         let drawW, drawH, drawX, drawY;
 
         if (canvasAspect > imgAspect) {
-          drawW = window.innerWidth;
-          drawH = window.innerWidth / imgAspect;
+          drawW = canvasWidth;
+          drawH = canvasWidth / imgAspect;
           drawX = 0;
-          drawH *= 1.15; // Extra stretch to hide bottom
-          drawY = (window.innerHeight - drawH) * 0.45;
+          drawY = (canvasHeight - drawH) / 2;
         } else {
-          drawH = window.innerHeight;
-          drawW = window.innerHeight * imgAspect;
-          drawX = (window.innerWidth - drawW) / 2;
-          drawH *= 1.15;
-          drawY = (window.innerHeight - drawH) * 0.75;
+          drawH = canvasHeight;
+          drawW = canvasHeight * imgAspect;
+          drawX = (canvasWidth - drawW) / 2;
+          drawY = 0;
         }
 
+        // 1080p+ Quality Rendering
         ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
-        ctx.drawImage(img, drawX, drawY, drawW, drawH);
+        ctx.drawImage(img, 0, 0, img.width, img.height, drawX, drawY, drawW, drawH);
 
+        // High-fidelity Gradient
         const gradient = ctx.createRadialGradient(
           window.innerWidth / 2, window.innerHeight / 2, 0,
           window.innerWidth / 2, window.innerHeight / 2, Math.max(window.innerWidth, window.innerHeight)
